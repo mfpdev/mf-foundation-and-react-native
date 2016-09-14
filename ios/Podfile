@@ -1,0 +1,4 @@
+target 'MobileFirstAndReactNative' do
+use_frameworks!
+  pod 'IBMMobileFirstPlatformFoundation'
+end

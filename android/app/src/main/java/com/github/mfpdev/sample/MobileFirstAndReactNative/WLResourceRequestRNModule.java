@@ -15,6 +15,8 @@ import com.worklight.wlclient.api.WLResponse;
 import com.worklight.wlclient.api.WLResponseListener;
 
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by ishaib on 15/09/16.
@@ -29,6 +31,14 @@ public class WLResourceRequestRNModule extends ReactContextBaseJavaModule {
         return "WLResourceRequestRN";
     }
 
+    @Override
+    public Map<String, Object> getConstants() {
+        final Map<String, Object> constants = new HashMap<>();
+        constants.put("GET", WLResourceRequest.GET);
+        constants.put("POST", WLResourceRequest.POST);
+        return constants;
+    }
+
     @ReactMethod
     public void requestWithURL(
             String url,
@@ -39,16 +49,16 @@ public class WLResourceRequestRNModule extends ReactContextBaseJavaModule {
             WLResourceRequest request = new WLResourceRequest(URI.create(url),method);
             request.send(new WLResponseListener(){
                 public void onSuccess(WLResponse response) {
-                    successCallback.invoke(null,response.getResponseText());
+                    successCallback.invoke(response.getResponseText());
                     Log.d("Success", response.getResponseText());
                 }
                 public void onFailure(WLFailResponse response) {
-                    errorCallback.invoke(response.getErrorMsg(),null);
+                    errorCallback.invoke(response.getErrorMsg());
                     Log.d("Failure", response.getErrorMsg());
                 }
             });
         } catch (IllegalViewOperationException e) {
-            errorCallback.invoke("failure" ,e.getMessage(), e);
+            errorCallback.invoke(e.getMessage());
         }
     }
 

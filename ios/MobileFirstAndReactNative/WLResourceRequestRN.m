@@ -12,8 +12,12 @@
 @implementation WLResourceRequestRN
 RCT_EXPORT_MODULE();
 
+- (NSDictionary *)constantsToExport
+{
+  return @{ @"GET": GET_METHOD, @"POST" : POST_METHOD };
+}
 
-RCT_EXPORT_METHOD(requestWithURL:(NSString *)urlString method:(NSString *)method: (RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(requestWithURL:(NSString *)urlString method:(NSString *)method: (RCTResponseErrorBlock)errorBlock:(RCTResponseSenderBlock)callback)
 {
   NSURL *url = [NSURL URLWithString:urlString];
   WLResourceRequest* resourceRequest = [WLResourceRequest requestWithURL:url method:WLHttpMethodGet];
@@ -22,18 +26,16 @@ RCT_EXPORT_METHOD(requestWithURL:(NSString *)urlString method:(NSString *)method
     if(error != nil){
       resultText = @"Invocation failure.";
       resultText = [resultText stringByAppendingString: error.description];
-      callback(@[resultText ,[NSNull null]]);
+      errorBlock(error);
     }
     else{
       resultText = response.responseText;
-      callback(@[[NSNull null], resultText]);
+      callback(@[resultText]);
     }
   }];
 }
 
-RCT_EXPORT_METHOD(asyncRequestWithURL:(NSString *)urlString method:(NSString *)method:
-                 resolver:(RCTPromiseResolveBlock)resolve
-                 rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_METHOD(asyncRequestWithURL:(NSString *)urlString method:(NSString *)method resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
   NSURL *url = [NSURL URLWithString:urlString];
   WLResourceRequest* resourceRequest = [WLResourceRequest requestWithURL:url method:WLHttpMethodGet];

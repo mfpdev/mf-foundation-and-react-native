@@ -54,17 +54,6 @@ var styles = StyleSheet.create({
         alignSelf: 'stretch',
         justifyContent: 'center'
     },
-    searchInput: {
-        height: 36,
-        padding: 4,
-        marginRight: 5,
-        flex: 4,
-        fontSize: 18,
-        borderWidth: 1,
-        borderColor: '#48BBEC',
-        borderRadius: 8,
-        color: '#48BBEC'
-    },
     image: {
         width: 150,
         height: 159
@@ -75,7 +64,6 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchString: 'london',
             isLoading: false,
             message: ''
         };
@@ -97,12 +85,12 @@ class Main extends Component {
                 <Text style={styles.description}>
                     ReactNative And MobileFirst Foundation
                 </Text>
-                <Text>{"\n"}{"\n"}{"\n"}</Text>
+                <Text>{"\n\n\n"}</Text>
                 <TouchableHighlight
                     onPress={this.getMFBlogEnriesAsCallback.bind(this) }
                     style={styles.button}
                     underlayColor='#99d9f4'>
-                    <Text style={styles.buttonText}>View MF Blog (Callback)</Text>
+                    <Text style={styles.buttonText}>View MF Blog (Callback) </Text>
                 </TouchableHighlight>
                 <TouchableHighlight
                     onPress={this.getMFBlogEnriesAsPromise.bind(this) }
@@ -110,9 +98,9 @@ class Main extends Component {
                     underlayColor='#99d9f4'>
                     <Text style={styles.buttonText}>View MF Blog (Promise) </Text>
                 </TouchableHighlight>
-                <Text>{"\n"}{"\n"}{"\n"}</Text>
+                <Text>{"\n\n\n"}</Text>
                 {spinner}
-                <Text>{"\n"}{"\n"}{"\n"}</Text>
+                <Text>{"\n\n\n"}</Text>
 
                 <Image source={require('./Resources/foundation.png') } style={styles.image}/>
                 <Text style={styles.description}>{this.state.message}</Text>
@@ -125,11 +113,7 @@ class Main extends Component {
         this.setState({ isLoading: true, message: '' });
         try {
             var result
-            if (Platform.OS === 'ios') {
-                result = await WLResourceRequestRN.asyncRequestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", 1.0);
-            } else {
-                result = await WLResourceRequestRN.asyncRequestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET");
-            }
+            result = await WLResourceRequestRN.asyncRequestWithURL("/adapters/MFBlogAdaptger/getFeed", WLResourceRequestRN.GET);
             this.handleResponse(JSON.parse(result))
         } catch (e) {
             error = e;
@@ -139,21 +123,14 @@ class Main extends Component {
 
     getMFBlogEnriesAsCallback() {
         this.setState({ isLoading: true, message: '' });
-        if (Platform.OS === 'ios') {
-            WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", (error, result) => {
-                if (!error) {
-                    this.handleResponse(JSON.parse(result))
-                }
-                this.setState({ isLoading: false, message: error != null ? error : "" });
-            })
-        } else {
-            WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", 1.0, (error, result) => {
-                if (!error) {
-                    this.handleResponse(JSON.parse(result))
-                }
-                this.setState({ isLoading: false, message: error != null ? error : "" });
-            })
-        }
+        WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", WLResourceRequestRN.GET,
+            (error) => {
+                this.setState({ isLoading: false, message: error });
+            },
+            (result) => {
+                this.handleResponse(JSON.parse(result))
+                this.setState({ isLoading: false, message: "" });
+            });
     }
 
     handleResponse(response) {

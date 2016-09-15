@@ -27,7 +27,6 @@
 		D456F6CE1D897BE700C04A3F /* WLResourceRequestRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */; };
 		D456F6DB1D897C3600C04A3F /* foundation.png in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DA1D897C3600C04A3F /* foundation.png */; };
 		D456F6DD1D897EE200C04A3F /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DC1D897EE200C04A3F /* mfpclient.plist */; };
-		D456F6E41D8982DD00C04A3F /* libRNInvoke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D456F6E31D8982CB00C04A3F /* libRNInvoke.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,13 +107,6 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		D456F6E21D8982CB00C04A3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D456F6DE1D8982CB00C04A3F /* RNInvoke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CCFA7EAE1D183DFD00E15EDF;
-			remoteInfo = RNInvoke;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -145,7 +137,6 @@
 		D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLResourceRequestRN.m; path = MobileFirstAndReactNative/WLResourceRequestRN.m; sourceTree = "<group>"; };
 		D456F6DA1D897C3600C04A3F /* foundation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation.png; sourceTree = "<group>"; };
 		D456F6DC1D897EE200C04A3F /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
-		D456F6DE1D8982CB00C04A3F /* RNInvoke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNInvoke.xcodeproj; path = "../node_modules/react-native-invoke/ios/RNInvoke.xcodeproj"; sourceTree = "<group>"; };
 		F018229AC7E9E3BD921E4A99 /* Pods-MobileFirstAndReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFirstAndReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFirstAndReactNative/Pods-MobileFirstAndReactNative.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +153,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D456F6E41D8982DD00C04A3F /* libRNInvoke.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -330,7 +320,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				D456F6DE1D8982CB00C04A3F /* RNInvoke.xcodeproj */,
 				D456F6DC1D897EE200C04A3F /* mfpclient.plist */,
 				13B07FAE1A68108700A75B9A /* MobileFirstAndReactNative */,
 				D456F6D91D897C3600C04A3F /* Resources */,
@@ -359,14 +348,6 @@
 				D456F6DA1D897C3600C04A3F /* foundation.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		D456F6DF1D8982CB00C04A3F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D456F6E31D8982CB00C04A3F /* libRNInvoke.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,10 +459,6 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
-				{
-					ProductGroup = D456F6DF1D8982CB00C04A3F /* Products */;
-					ProjectRef = D456F6DE1D8982CB00C04A3F /* RNInvoke.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -560,13 +537,6 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D456F6E31D8982CB00C04A3F /* libRNInvoke.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNInvoke.a;
-			remoteRef = D456F6E21D8982CB00C04A3F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -735,7 +705,6 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-invoke/ios",
 				);
 				INFOPLIST_FILE = MobileFirstAndReactNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -758,7 +727,6 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-invoke/ios",
 				);
 				INFOPLIST_FILE = MobileFirstAndReactNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

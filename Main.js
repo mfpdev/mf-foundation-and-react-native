@@ -99,16 +99,16 @@ class Main extends Component {
                 </Text>
                 <Text>{"\n"}{"\n"}{"\n"}</Text>
                 <TouchableHighlight
-                    onPress={this.getMFBlogEnries.bind(this) }
+                    onPress={this.getMFBlogEnriesAsCallback.bind(this) }
                     style={styles.button}
                     underlayColor='#99d9f4'>
-                    <Text style={styles.buttonText}>MF Blog (Callbacks)</Text>
+                    <Text style={styles.buttonText}>View MF Blog (Callback)</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
-                    onPress={this.getMFBlogEnriesAsync.bind(this) }
+                    onPress={this.getMFBlogEnriesAsPromise.bind(this) }
                     style={styles.button}
                     underlayColor='#99d9f4'>
-                    <Text style={styles.buttonText}>MF Blog (Promises) </Text>
+                    <Text style={styles.buttonText}>View MF Blog (Promise) </Text>
                 </TouchableHighlight>
                 <Text>{"\n"}{"\n"}{"\n"}</Text>
                 {spinner}
@@ -120,7 +120,7 @@ class Main extends Component {
         );
     }
 
-    async getMFBlogEnriesAsync() {
+    async getMFBlogEnriesAsPromise() {
         var error = "";
         this.setState({ isLoading: true, message: '' });
         try {
@@ -137,7 +137,7 @@ class Main extends Component {
         this.setState({ isLoading: false, message: error });
     }
 
-    getMFBlogEnries() {
+    getMFBlogEnriesAsCallback() {
         this.setState({ isLoading: true, message: '' });
         if (Platform.OS === 'ios') {
             WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", (error, result) => {

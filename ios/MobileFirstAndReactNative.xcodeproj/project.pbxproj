@@ -24,7 +24,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		37C944D79D0B461591FBB398 /* Pods_MobileFirstAndReactNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60DE3DBE2A0FA4033B1AAA0 /* Pods_MobileFirstAndReactNative.framework */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		D456F6CE1D897BE700C04A3F /* WLReactNativeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D456F6CD1D897BE700C04A3F /* WLReactNativeAPI.m */; };
+		D456F6CE1D897BE700C04A3F /* WLResourceRequestRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */; };
 		D456F6DB1D897C3600C04A3F /* foundation.png in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DA1D897C3600C04A3F /* foundation.png */; };
 		D456F6DD1D897EE200C04A3F /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DC1D897EE200C04A3F /* mfpclient.plist */; };
 		D456F6E41D8982DD00C04A3F /* libRNInvoke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D456F6E31D8982CB00C04A3F /* libRNInvoke.a */; };
@@ -141,8 +141,8 @@
 		7D51A242B98CD0DCB4578F8C /* Pods-MobileFirstAndReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFirstAndReactNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFirstAndReactNative/Pods-MobileFirstAndReactNative.debug.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		C60DE3DBE2A0FA4033B1AAA0 /* Pods_MobileFirstAndReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileFirstAndReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D456F6CC1D897BE700C04A3F /* WLReactNativeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLReactNativeAPI.h; path = MobileFirstAndReactNative/WLReactNativeAPI.h; sourceTree = "<group>"; };
-		D456F6CD1D897BE700C04A3F /* WLReactNativeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLReactNativeAPI.m; path = MobileFirstAndReactNative/WLReactNativeAPI.m; sourceTree = "<group>"; };
+		D456F6CC1D897BE700C04A3F /* WLResourceRequestRN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLResourceRequestRN.h; path = MobileFirstAndReactNative/WLResourceRequestRN.h; sourceTree = "<group>"; };
+		D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLResourceRequestRN.m; path = MobileFirstAndReactNative/WLResourceRequestRN.m; sourceTree = "<group>"; };
 		D456F6DA1D897C3600C04A3F /* foundation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation.png; sourceTree = "<group>"; };
 		D456F6DC1D897EE200C04A3F /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
 		D456F6DE1D8982CB00C04A3F /* RNInvoke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNInvoke.xcodeproj; path = "../node_modules/react-native-invoke/ios/RNInvoke.xcodeproj"; sourceTree = "<group>"; };
@@ -267,8 +267,8 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				D456F6CC1D897BE700C04A3F /* WLReactNativeAPI.h */,
-				D456F6CD1D897BE700C04A3F /* WLReactNativeAPI.m */,
+				D456F6CC1D897BE700C04A3F /* WLResourceRequestRN.h */,
+				D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -667,7 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D456F6CE1D897BE700C04A3F /* WLReactNativeAPI.m in Sources */,
+				D456F6CE1D897BE700C04A3F /* WLResourceRequestRN.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

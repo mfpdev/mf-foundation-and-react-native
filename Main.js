@@ -2,7 +2,7 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var BlogEntries = require('./BlogEntries');
-var WLReactNativeAPI = require('NativeModules').WLReactNativeAPI;
+var WLResourceRequestRN = require('NativeModules').WLResourceRequestRN;
 
 var {
     Component
@@ -15,7 +15,8 @@ var {
     View,
     TouchableHighlight,
     ActivityIndicator,
-    Image
+    Image,
+    Platform
 } = ReactNative
 
 var styles = StyleSheet.create({
@@ -96,33 +97,63 @@ class Main extends Component {
                 <Text style={styles.description}>
                     ReactNative And MobileFirst Foundation
                 </Text>
-                 <Text>{"\n"}{"\n"}{"\n"}</Text>
+                <Text>{"\n"}{"\n"}{"\n"}</Text>
                 <TouchableHighlight
                     onPress={this.getMFBlogEnries.bind(this) }
                     style={styles.button}
                     underlayColor='#99d9f4'>
-                    <Text style={styles.buttonText}>MF Blog</Text>
+                    <Text style={styles.buttonText}>MF Blog (Callbacks)</Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    onPress={this.getMFBlogEnriesAsync.bind(this) }
+                    style={styles.button}
+                    underlayColor='#99d9f4'>
+                    <Text style={styles.buttonText}>MF Blog (Promises) </Text>
                 </TouchableHighlight>
                 <Text>{"\n"}{"\n"}{"\n"}</Text>
                 {spinner}
                 <Text>{"\n"}{"\n"}{"\n"}</Text>
-                
+
                 <Image source={require('./Resources/foundation.png') } style={styles.image}/>
                 <Text style={styles.description}>{this.state.message}</Text>
             </View>
         );
     }
 
+    async getMFBlogEnriesAsync() {
+        var error = "";
+        this.setState({ isLoading: true, message: '' });
+        try {
+            var result
+            if (Platform.OS === 'ios') {
+                result = await WLResourceRequestRN.asyncRequestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", 1.0);
+            } else {
+                result = await WLResourceRequestRN.asyncRequestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET");
+            }
+            this.handleResponse(JSON.parse(result))
+        } catch (e) {
+            error = e;
+        }
+        this.setState({ isLoading: false, message: error });
+    }
+
     getMFBlogEnries() {
         this.setState({ isLoading: true, message: '' });
-        WLReactNativeAPI.requestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", (error, result) => {
-            if (error) {
-                 this.setState({ isLoading: false, message: error });
-            } else {
-                this.handleResponse(JSON.parse(result))
-            }
-            this.state.isLoading = false
-        })
+        if (Platform.OS === 'ios') {
+            WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", (error, result) => {
+                if (!error) {
+                    this.handleResponse(JSON.parse(result))
+                }
+                this.setState({ isLoading: false, message: error != null ? error : "" });
+            })
+        } else {
+            WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", "GET", 1.0, (error, result) => {
+                if (!error) {
+                    this.handleResponse(JSON.parse(result))
+                }
+                this.setState({ isLoading: false, message: error != null ? error : "" });
+            })
+        }
     }
 
     handleResponse(response) {

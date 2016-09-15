@@ -5,7 +5,8 @@ var ReactNative = require('react-native');
 var BlogEntry = require('./BlogEntry');
 
 var {
-    Component
+    Component,
+    BackAndroid
 } = React
 
 var {
@@ -33,7 +34,7 @@ var styles = StyleSheet.create({
         backgroundColor: '#dddddd'
     },
     name: {
-        fontSize: 25,
+        fontSize: 15,
         fontWeight: 'bold',
         color: '#48BBEC'
     },
@@ -44,7 +45,7 @@ var styles = StyleSheet.create({
     rowContainer: {
         flexDirection: 'row',
         padding: 10
-    }
+    } 
 });
 
 class BlogEntries extends Component {
@@ -69,7 +70,6 @@ class BlogEntries extends Component {
     }
 
     renderRow(rowData, sectionID, rowID) {
-        console.log(rowData);
         return (
             <TouchableHighlight onPress={() => this.rowPressed(rowData.title) }
                 underlayColor='#dddddd'>

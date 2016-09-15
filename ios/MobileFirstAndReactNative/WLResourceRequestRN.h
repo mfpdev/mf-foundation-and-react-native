@@ -10,5 +10,5 @@
 #import <IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation.h>
 #import "RCTBridgeModule.h"
 
-@interface WLReactNativeAPI : NSObject <RCTBridgeModule>
+@interface WLResourceRequestRN : NSObject <RCTBridgeModule>
 @end

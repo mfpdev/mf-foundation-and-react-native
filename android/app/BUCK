@@ -46,13 +46,13 @@ android_library(
 
 android_build_config(
   name = 'build_config',
-  package = 'com.mobilefirstandreactnative',
+  package = 'com.github.mfpdev.sample.MobileFirstAndReactNative',
 )
 
 android_resource(
   name = 'res',
   res = 'src/main/res',
-  package = 'com.mobilefirstandreactnative',
+  package = 'com.github.mfpdev.sample.MobileFirstAndReactNative',
 )
 
 android_binary(

@@ -1,6 +1,9 @@
-package com.mobilefirstandreactnative;
+package com.github.mfpdev.sample.MobileFirstAndReactNative;
+
+import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
+import com.worklight.wlclient.api.WLClient;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +14,11 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "MobileFirstAndReactNative";
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        WLClient.createInstance(this);
+        super.onCreate(savedInstanceState);
     }
 }

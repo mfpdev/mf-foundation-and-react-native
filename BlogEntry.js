@@ -31,15 +31,11 @@ class BlogEntry extends Component {
     var property = this.props.property;
 
     return (<WebView
-          automaticallyAdjustContentInsets={false}
-          style={styles.webView}
-          source={{ html: property.content.CDATA, baseUrl: "/" }}
-          javaScriptEnabled={true}
-          domStorageEnabled={true}
-          decelerationRate="normal"
-          startInLoadingState={true}
-          scalesPageToFit={true}
-        />
+        source={{uri: property.link.href}}
+        style={{marginTop: 20}}
+        javaScriptEnabled={true}
+        scalesPageToFit={true}
+      />
     );
   }
 }

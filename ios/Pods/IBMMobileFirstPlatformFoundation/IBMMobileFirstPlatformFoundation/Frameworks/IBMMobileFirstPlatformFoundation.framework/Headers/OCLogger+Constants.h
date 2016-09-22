@@ -28,7 +28,7 @@ extern NSString* const KEY_LEVEL;
 extern NSString* const KEY_CAPTURE;
 extern NSString* const KEY_FILTER;
 extern NSString* const KEY_ANALYTICS_CAPTURE;
-//extern NSString* const KEY_AUTO_SEND;
+extern NSString* const KEY_AUTO_SEND;
 
 extern NSString* const KEY_SERVER_LEVEL;
 extern NSString* const KEY_SERVER_CAPTURE;
@@ -72,7 +72,7 @@ extern NSString* const TAG_LOG_LEVEL;
 extern NSString* const TAG_UNCAUGHT_EXCEPTION;
 extern NSString* const TAG_FILTERS;
 
-//extern NSString* const TAG_AUTO_SEND;
+extern NSString* const TAG_AUTO_SEND;
 
 extern NSString* const TAG_SERVER_CAPTURE;
 extern NSString* const TAG_SERVER_LOG_LEVEL;
@@ -97,6 +97,7 @@ extern NSString* const KEY_METADATA_METHOD;
 extern NSString* const KEY_METADATA_LINE;
 extern NSString* const KEY_METADATA_FILE;
 extern NSString* const KEY_METADATA_STACKTRACE;
+extern NSString* const KEY_METADATA_EXCEPTION_MSG;
 extern NSString* const KEY_ARGUMENTS;
 
 extern NSString* const KEY_METADATA_USER;
@@ -127,6 +128,5 @@ extern NSString* const WL_INIT_PACKAGE;
 extern NSString* const WL_ACTION_PACKAGE;
 extern NSString* const WL_AUTH_PACKAGE;
 extern NSString* const WL_OAUTH_PACKAGE;
-extern NSString* const WL_PUSH_PACKAGE;
 extern NSString* const WL_CONFIG_PACKAGE;
 

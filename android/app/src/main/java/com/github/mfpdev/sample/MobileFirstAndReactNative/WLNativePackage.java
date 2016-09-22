@@ -5,6 +5,9 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
+import com.github.mfpdev.sample.MobileFirstAndReactNative.wlrnapi.SecurityCheckChallengeHandlerRN;
+import com.github.mfpdev.sample.MobileFirstAndReactNative.wlrnapi.WLClientRN;
+import com.github.mfpdev.sample.MobileFirstAndReactNative.wlrnapi.WLResourceRequestRN;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,7 +33,9 @@ public class WLNativePackage implements ReactPackage {
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        modules.add(new WLResourceRequestRNModule(reactContext));
+        modules.add(new WLClientRN(reactContext));
+        modules.add(new WLResourceRequestRN(reactContext));
+        modules.add(new SecurityCheckChallengeHandlerRN(reactContext));
         return modules;
     }
 }

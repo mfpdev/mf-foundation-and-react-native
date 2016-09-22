@@ -6,12 +6,12 @@
 //  Copyright © 2016 Facebook. All rights reserved.
 //
 
-#import "WLChallengeHandlerRN.h"
+#import "SecurityCheckChallengeHandlerRN.h"
 #import "RCTEventDispatcher.h"
-#import "WLChallengeHandlerEventEmitter.h"
+#import "SecurityCheckChallengeHandlerEventEmitter.h"
 
 
-@implementation WLChallengeHandlerRN
+@implementation SecurityCheckChallengeHandlerRN
 
 RCT_EXPORT_MODULE();
 

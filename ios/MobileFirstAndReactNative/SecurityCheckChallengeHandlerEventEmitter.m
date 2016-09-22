@@ -6,16 +6,24 @@
 //  Copyright © 2016 Facebook. All rights reserved.
 //
 
-#import "WLChallengeHandlerEventEmitter.h"
+#import "SecurityCheckChallengeHandlerEventEmitter.h"
 
 
 
 
-@implementation WLChallengeHandlerEventEmitter
+@implementation SecurityCheckChallengeHandlerEventEmitter
 RCT_EXPORT_MODULE();
 
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendHandleChallenge:) name:@"handleChallenge" object:nil];
+  }
+  return self;
+}
+
 - (NSArray<NSString *> *)supportedEvents {
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendHandleChallenge:) name:@"handleChallenge" object:nil];
   return @[@"handleChallenge"];
 }
 

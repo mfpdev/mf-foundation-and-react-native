@@ -2,7 +2,12 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var BlogEntries = require('./BlogEntries');
+var LoginScreen = require('./LoginScreen');
+
 var WLResourceRequestRN = require('NativeModules').WLResourceRequestRN;
+var SecurityCheckChallengeHandlerRN = require('NativeModules').SecurityCheckChallengeHandlerRN;
+var WLClientRN = require('NativeModules').WLClientRN;
+
 
 var {
     Component
@@ -16,15 +21,23 @@ var {
     TouchableHighlight,
     ActivityIndicator,
     Image,
-    Platform
+    Platform,
+    NativeEventEmitter,
+    NativeModules
 } = ReactNative
 
 var styles = StyleSheet.create({
-    description: {
+    title: {
         marginBottom: 20,
         fontSize: 18,
         textAlign: 'center',
         color: '#656565'
+    },
+    error: {
+        marginBottom: 20,
+        fontSize: 18,
+        textAlign: 'center',
+        color: 'red'
     },
     container: {
         padding: 30,
@@ -60,20 +73,27 @@ var styles = StyleSheet.create({
     }
 });
 
+
+const challengeEventModule = new NativeEventEmitter(NativeModules.SecurityCheckChallengeHandlerEventEmitter);
+
 class Main extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             isLoading: false,
             message: ''
-        };
+        };   
+        this.registerChallengeHandler();
     }
 
-    onSearchTextChanged(event) {
-        console.log('onSearchTextChanged');
-        this.setState({ searchString: event.nativeEvent.text });
-        console.log(this.state.searchString);
+    componentDidMount() {
+         this.addChallengeListener();
     }
+
+    registerChallengeHandler() {
+        WLClientRN.registerChallengeHandler("UserLogin");
+    }    
 
     render() {
         var spinner = this.state.isLoading ?
@@ -82,7 +102,7 @@ class Main extends Component {
             (<View/>);
         return (
             <View style={styles.container}>
-                <Text style={styles.description}>
+                <Text style={styles.title}>
                     ReactNative And MobileFirst Foundation
                 </Text>
                 <Text>{"\n\n\n"}</Text>
@@ -90,25 +110,48 @@ class Main extends Component {
                     onPress={this.getMFBlogEnriesAsCallback.bind(this) }
                     style={styles.button}
                     underlayColor='#99d9f4'>
-                    <Text style={styles.buttonText}>View MF Blog (Callback) </Text>
+                    <Text style={styles.buttonText}>View MF Blog (Callback)</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
                     onPress={this.getMFBlogEnriesAsPromise.bind(this) }
                     style={styles.button}
                     underlayColor='#99d9f4'>
-                    <Text style={styles.buttonText}>View MF Blog (Promise) </Text>
+                    <Text style={styles.buttonText}>View MF Blog (Promise)</Text>
                 </TouchableHighlight>
-                <Text>{"\n\n\n"}</Text>
+                <Text>{"\n"}</Text>
                 {spinner}
-                <Text>{"\n\n\n"}</Text>
-
+                <Text>{"\n"}</Text>
+                <Text style={styles.error}>{this.state.message}</Text>
                 <Image source={require('./Resources/foundation.png') } style={styles.image}/>
-                <Text style={styles.description}>{this.state.message}</Text>
             </View>
         );
     }
+ 
+    isLoginOnTop() {
+        return this.props.navigator.navigationContext.currentRoute.component.name === "LoginScreen";
+    }
+    
+    addChallengeListener() {
+        var that = this;       
+        const challengeEventModuleSubscription  = challengeEventModule.addListener(
+            'handleChallenge', function (challenge) {
+                if (challenge.securityCheck === "UserLogin" && !that.isLoginOnTop()) {
+                    var a = that.props.navigator.push({
+                        title: 'Login',
+                        component: LoginScreen,
+                        passProps: {}
+                    });
+                } else if (that.isLoginOnTop()){
+                    alert("Wrong Credentials");
+                }
+            }
+        );
+    }    
+
+    
 
     async getMFBlogEnriesAsPromise() {
+        SecurityCheckChallengeHandlerRN.cancel("UserLogin");
         var error = "";
         this.setState({ isLoading: true, message: '' });
         try {
@@ -118,28 +161,38 @@ class Main extends Component {
         } catch (e) {
             error = e;
         }
-        this.setState({ isLoading: false, message: error });
+        this.setState({ isLoading: false, message: error ? "Failed to retrieve blog entries - " + error.message : ""});
     }
 
     getMFBlogEnriesAsCallback() {
+        SecurityCheckChallengeHandlerRN.cancel("UserLogin");
+        var that = this;
         this.setState({ isLoading: true, message: '' });
         WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", WLResourceRequestRN.GET,
             (error) => {
-                this.setState({ isLoading: false, message: error });
+                that.props.navigator.popToTop();
+                that.setState({ isLoading: false, message: error.message });
             },
             (result) => {
-                this.handleResponse(JSON.parse(result))
-                this.setState({ isLoading: false, message: "" });
+                that.handleResponse(JSON.parse(result))
+                that.setState({ isLoading: false, message: "" });
             });
     }
 
     handleResponse(response) {
         this.setState({ isLoading: false, message: '' });
-        this.props.navigator.push({
+        var beComponent = {
             title: 'MF And ReactNative Demo',
             component: BlogEntries,
             passProps: { entries: response.feed.entry }
-        });
+        };
+
+        if (this.isLoginOnTop()) {
+            this.props.navigator.replace(beComponent);
+        } else {
+            this.props.navigator.push(beComponent);
+        }
+        
     }
 }
 

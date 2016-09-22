@@ -11,5 +11,5 @@
 #import "RCTBridge.h"
 #import "RCTEventEmitter.h"
 
-@interface WLChallengeHandlerRN : SecurityCheckChallengeHandler <RCTBridgeModule> 
+@interface SecurityCheckChallengeHandlerRN : SecurityCheckChallengeHandler <RCTBridgeModule>
 @end

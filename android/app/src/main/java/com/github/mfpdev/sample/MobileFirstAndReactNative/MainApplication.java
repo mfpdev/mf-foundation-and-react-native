@@ -2,7 +2,6 @@ package com.github.mfpdev.sample.MobileFirstAndReactNative;
 
 import android.app.Application;
 
-import com.github.mfpdev.sample.MobileFirstAndReactNative.BuildConfig;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;

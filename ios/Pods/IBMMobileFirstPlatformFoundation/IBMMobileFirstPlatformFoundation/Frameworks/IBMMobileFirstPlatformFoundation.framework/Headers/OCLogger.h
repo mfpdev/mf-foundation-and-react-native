@@ -230,6 +230,13 @@ typedef enum {
 +(void) setLevel: (OCLogType) level;
 
 /**
+ Global setting: Turns Auto Log Send on or off
+ @param Boolean Flag determines whether or not logs are automatically forwarded to the server on each successful resource request, if no logging has occurred for 60 seconds.
+ @since IBM Worklight V6.2.0
+ */
++(void) setAutoSendLogs: (BOOL) flag;
+
+/**
  Get and apply the configuration from the IBM MobileFirst Platform Server.  The configuration comes from the use of
  the "Config Profiles" tab in the IBM MobileFirst Platform administrative console.
  Note that this configuration will override the current configuration set on the device.

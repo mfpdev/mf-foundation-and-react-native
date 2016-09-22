@@ -1,12 +1,12 @@
 PODS:
-  - IBMMobileFirstPlatformFoundation (8.0.2016032802)
+  - IBMMobileFirstPlatformFoundation (8.0.2016070718)
 
 DEPENDENCIES:
   - IBMMobileFirstPlatformFoundation
 
 SPEC CHECKSUMS:
-  IBMMobileFirstPlatformFoundation: 586a632f113d9a287ae7023a0e53ea2e376e8e99
+  IBMMobileFirstPlatformFoundation: adfc8b080dcb484bc49d37a97863b706f0fb31cb
 
-PODFILE CHECKSUM: 62d0fd4138fa8175811d5063110f6ca6b345ed6a
+PODFILE CHECKSUM: c2a42c66e7f20dad86abcc94db09c33c65432217
 
 COCOAPODS: 1.0.1

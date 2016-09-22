@@ -2,11 +2,15 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
+var WLResourceRequestRN = require('NativeModules').WLResourceRequestRN;
+var SecurityCheckChallengeHandlerRN = require('NativeModules').SecurityCheckChallengeHandlerRN;
+var WLCLientRN = require('NativeModules').WLCLientRN;
 var Main = require('./Main');
 var BlogEntries = require('./BlogEntries');
 var BlogEntry = require('./BlogEntry');
-var _navigator;
+var LoginScreen = require('./LoginScreen');
 
+var _navigator;
 
 var {
   Component
@@ -55,6 +59,8 @@ class MFBlogApp extends Component {
               return <BlogEntries title={route.title} navigator={navigator} {...route.passProps}/>
             case "BlogEntry":
               return <BlogEntry title={route.title} navigator={navigator} {...route.passProps}/>
+            case "LoginScreen":
+              return <LoginScreen title={route.title} navigator={navigator} {...route.passProps}/>
           }
         }}
         />

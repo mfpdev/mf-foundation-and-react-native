@@ -11,7 +11,7 @@
 #import "RCTBridgeModule.h"
 
 
-@interface WLChallengeHandlerEventEmitter : RCTEventEmitter <RCTBridgeModule>
+@interface SecurityCheckChallengeHandlerEventEmitter : RCTEventEmitter <RCTBridgeModule>
 -(void) sendHandleChallenge:(NSNotification *) notification;
 @end
 

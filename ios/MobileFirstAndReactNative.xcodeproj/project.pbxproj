@@ -24,9 +24,12 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		37C944D79D0B461591FBB398 /* Pods_MobileFirstAndReactNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60DE3DBE2A0FA4033B1AAA0 /* Pods_MobileFirstAndReactNative.framework */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		D43F45791D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F45781D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.m */; };
+		D43F457C1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F457B1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.m */; };
 		D456F6CE1D897BE700C04A3F /* WLResourceRequestRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */; };
 		D456F6DB1D897C3600C04A3F /* foundation.png in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DA1D897C3600C04A3F /* foundation.png */; };
 		D456F6DD1D897EE200C04A3F /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DC1D897EE200C04A3F /* mfpclient.plist */; };
+		D48082201D8ECC2B00A2D335 /* WLClientRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D480821F1D8ECC2B00A2D335 /* WLClientRN.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,10 +136,16 @@
 		7D51A242B98CD0DCB4578F8C /* Pods-MobileFirstAndReactNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFirstAndReactNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFirstAndReactNative/Pods-MobileFirstAndReactNative.debug.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		C60DE3DBE2A0FA4033B1AAA0 /* Pods_MobileFirstAndReactNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileFirstAndReactNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D43F45771D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecurityCheckChallengeHandlerRN.h; path = MobileFirstAndReactNative/SecurityCheckChallengeHandlerRN.h; sourceTree = "<group>"; };
+		D43F45781D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecurityCheckChallengeHandlerRN.m; path = MobileFirstAndReactNative/SecurityCheckChallengeHandlerRN.m; sourceTree = "<group>"; };
+		D43F457A1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecurityCheckChallengeHandlerEventEmitter.h; path = MobileFirstAndReactNative/SecurityCheckChallengeHandlerEventEmitter.h; sourceTree = "<group>"; };
+		D43F457B1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecurityCheckChallengeHandlerEventEmitter.m; path = MobileFirstAndReactNative/SecurityCheckChallengeHandlerEventEmitter.m; sourceTree = "<group>"; };
 		D456F6CC1D897BE700C04A3F /* WLResourceRequestRN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLResourceRequestRN.h; path = MobileFirstAndReactNative/WLResourceRequestRN.h; sourceTree = "<group>"; };
 		D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLResourceRequestRN.m; path = MobileFirstAndReactNative/WLResourceRequestRN.m; sourceTree = "<group>"; };
 		D456F6DA1D897C3600C04A3F /* foundation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation.png; sourceTree = "<group>"; };
 		D456F6DC1D897EE200C04A3F /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
+		D480821E1D8ECC2B00A2D335 /* WLClientRN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLClientRN.h; sourceTree = "<group>"; };
+		D480821F1D8ECC2B00A2D335 /* WLClientRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLClientRN.m; sourceTree = "<group>"; };
 		F018229AC7E9E3BD921E4A99 /* Pods-MobileFirstAndReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFirstAndReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFirstAndReactNative/Pods-MobileFirstAndReactNative.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,11 +263,10 @@
 		13B07FAE1A68108700A75B9A /* MobileFirstAndReactNative */ = {
 			isa = PBXGroup;
 			children = (
+				D48082211D8ED57800A2D335 /* WLRNAPI */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				D456F6CC1D897BE700C04A3F /* WLResourceRequestRN.h */,
-				D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -350,6 +358,21 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D48082211D8ED57800A2D335 /* WLRNAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D480821E1D8ECC2B00A2D335 /* WLClientRN.h */,
+				D480821F1D8ECC2B00A2D335 /* WLClientRN.m */,
+				D456F6CC1D897BE700C04A3F /* WLResourceRequestRN.h */,
+				D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */,
+				D43F45771D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.h */,
+				D43F45781D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.m */,
+				D43F457A1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.h */,
+				D43F457B1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.m */,
+			);
+			name = WLRNAPI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,13 +398,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MobileFirstAndReactNative" */;
 			buildPhases = (
-				9DC65196CA924169C1F9CC70 /* [CP] Check Pods Manifest.lock */,
+				E02767E96CCB93D2EBEA0380 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				C7D2CC4F1F327D2B60B7F4C7 /* [CP] Embed Pods Frameworks */,
-				F9555EA1AFC0E784EEE34498 /* [CP] Copy Pods Resources */,
+				281AE27C519BAE3BF07CD87C /* [CP] Embed Pods Frameworks */,
+				BC127553DA469A6FA797701C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -577,22 +600,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
-		9DC65196CA924169C1F9CC70 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C7D2CC4F1F327D2B60B7F4C7 /* [CP] Embed Pods Frameworks */ = {
+		281AE27C519BAE3BF07CD87C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -607,7 +615,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileFirstAndReactNative/Pods-MobileFirstAndReactNative-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9555EA1AFC0E784EEE34498 /* [CP] Copy Pods Resources */ = {
+		BC127553DA469A6FA797701C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -620,6 +628,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileFirstAndReactNative/Pods-MobileFirstAndReactNative-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E02767E96CCB93D2EBEA0380 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -638,8 +661,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D456F6CE1D897BE700C04A3F /* WLResourceRequestRN.m in Sources */,
+				D43F45791D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				D43F457C1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.m in Sources */,
+				D48082201D8ECC2B00A2D335 /* WLClientRN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +733,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				INFOPLIST_FILE = MobileFirstAndReactNative/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -729,6 +756,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				INFOPLIST_FILE = MobileFirstAndReactNative/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

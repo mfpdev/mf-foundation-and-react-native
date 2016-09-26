@@ -170,7 +170,7 @@ class Main extends Component {
         this.setState({ isLoading: true, message: '' });
         try {
             var result
-            result = await WLResourceRequestRN.asyncRequestWithURL("/adapters/MFBlogAdaptger/getFeed", WLResourceRequestRN.GET);
+            result = await WLResourceRequestRN.asyncRequestWithURL("/adapters/MFBlogAdapter/getFeed", WLResourceRequestRN.GET);
             this.handleResponse(JSON.parse(result))
         } catch (e) {
             error = e;
@@ -182,7 +182,7 @@ class Main extends Component {
         SecurityCheckChallengeHandlerRN.cancel("UserLogin");
         var that = this;
         this.setState({ isLoading: true, message: '' });
-        WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdaptger/getFeed", WLResourceRequestRN.GET,
+        WLResourceRequestRN.requestWithURL("/adapters/MFBlogAdapter/getFeed", WLResourceRequestRN.GET,
             (error) => {
                 that.props.navigator.popToTop();
                 that.setState({ isLoading: false, message: error.message });

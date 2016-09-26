@@ -17,6 +17,7 @@ This sample purpose is to show you how you can run [React Native](https://facebo
 ## Running the sample
 
 - Clone this [Git repository](https://github.com/mfpdev/mf-foundation-and-react-native).
+
   ```
   git clone https://github.com/mfpdev/mf-foundation-and-react-native
   ```

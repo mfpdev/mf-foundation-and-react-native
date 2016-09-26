@@ -3,6 +3,7 @@
 The purpose of this sample is to show you how you can run [React Native](https://facebook.github.io/react-native/) project with MobileFirst foundation Server and SDKs.
 
 ## Demo
+[![MFP 7.1 + Ionic2](https://img.youtube.com/vi/VUQEgpdkHwA/0.jpg)](https://www.youtube.com/watch?v=VUQEgpdkHwA)
 
 ## Prerequisites
 * [Pre-installed React Native](https://facebook.github.io/react-native/docs/getting-started.html).

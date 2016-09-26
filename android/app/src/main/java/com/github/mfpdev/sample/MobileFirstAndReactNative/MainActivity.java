@@ -16,7 +16,12 @@
 
 package com.github.mfpdev.sample.MobileFirstAndReactNative;
 
+import android.annotation.TargetApi;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 
 import com.facebook.react.ReactActivity;
 import com.worklight.wlclient.api.WLClient;
@@ -37,4 +42,11 @@ public class MainActivity extends ReactActivity {
         WLClient.createInstance(this);
         super.onCreate(savedInstanceState);
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
 }

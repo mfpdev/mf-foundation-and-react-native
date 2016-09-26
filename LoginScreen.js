@@ -55,7 +55,7 @@ var styles = StyleSheet.create({
         marginBottom: 5,
         marginTop: 5,
         flex: 1,
-        fontSize: 18,
+        fontSize: 15,
         borderWidth: 1,
         borderColor: "#48BBEC",
         borderRadius: 8,

@@ -1,6 +1,6 @@
-# Running MobileFirst Foundation 8.0 And React Native Application
+# Use MobileFirst Foundation 8.0 with React Native-based applications
 
-This sample purpose is to show you how you can run [React Native](https://facebook.github.io/react-native/) project with MobileFirst foundation Server and SDKs.
+The purpose of this sample is to show you how you can run [React Native](https://facebook.github.io/react-native/) project with MobileFirst foundation Server and SDKs.
 
 ## Demo
 

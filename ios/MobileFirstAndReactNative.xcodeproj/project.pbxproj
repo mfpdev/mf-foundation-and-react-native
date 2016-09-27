@@ -29,7 +29,7 @@
 		D456F6CE1D897BE700C04A3F /* WLResourceRequestRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */; };
 		D456F6DB1D897C3600C04A3F /* foundation.png in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DA1D897C3600C04A3F /* foundation.png */; };
 		D456F6DD1D897EE200C04A3F /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = D456F6DC1D897EE200C04A3F /* mfpclient.plist */; };
-		D48082201D8ECC2B00A2D335 /* WLClientRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D480821F1D8ECC2B00A2D335 /* WLClientRN.m */; };
+		D48C43661D9A36020061D8B2 /* WLClientRN.m in Sources */ = {isa = PBXBuildFile; fileRef = D48C43651D9A36020061D8B2 /* WLClientRN.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,8 +144,8 @@
 		D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLResourceRequestRN.m; path = MobileFirstAndReactNative/WLResourceRequestRN.m; sourceTree = "<group>"; };
 		D456F6DA1D897C3600C04A3F /* foundation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foundation.png; sourceTree = "<group>"; };
 		D456F6DC1D897EE200C04A3F /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
-		D480821E1D8ECC2B00A2D335 /* WLClientRN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLClientRN.h; sourceTree = "<group>"; };
-		D480821F1D8ECC2B00A2D335 /* WLClientRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLClientRN.m; sourceTree = "<group>"; };
+		D48C43641D9A36020061D8B2 /* WLClientRN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WLClientRN.h; path = MobileFirstAndReactNative/WLClientRN.h; sourceTree = "<group>"; };
+		D48C43651D9A36020061D8B2 /* WLClientRN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WLClientRN.m; path = MobileFirstAndReactNative/WLClientRN.m; sourceTree = "<group>"; };
 		F018229AC7E9E3BD921E4A99 /* Pods-MobileFirstAndReactNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileFirstAndReactNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileFirstAndReactNative/Pods-MobileFirstAndReactNative.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -361,8 +361,8 @@
 		D48082211D8ED57800A2D335 /* WLRNAPI */ = {
 			isa = PBXGroup;
 			children = (
-				D480821E1D8ECC2B00A2D335 /* WLClientRN.h */,
-				D480821F1D8ECC2B00A2D335 /* WLClientRN.m */,
+				D48C43641D9A36020061D8B2 /* WLClientRN.h */,
+				D48C43651D9A36020061D8B2 /* WLClientRN.m */,
 				D456F6CC1D897BE700C04A3F /* WLResourceRequestRN.h */,
 				D456F6CD1D897BE700C04A3F /* WLResourceRequestRN.m */,
 				D43F45771D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.h */,
@@ -660,12 +660,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48C43661D9A36020061D8B2 /* WLClientRN.m in Sources */,
 				D456F6CE1D897BE700C04A3F /* WLResourceRequestRN.m in Sources */,
 				D43F45791D8E5EF2004EAE1D /* SecurityCheckChallengeHandlerRN.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				D43F457C1D8E881F004EAE1D /* SecurityCheckChallengeHandlerEventEmitter.m in Sources */,
-				D48082201D8ECC2B00A2D335 /* WLClientRN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
